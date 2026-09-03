@@ -36,6 +36,15 @@
     scroll-behavior: smooth;
   }
 
+  /* Mobiili: estä koko dokumentin vahingossa tapahtuva sivuttaisliike */
+  html,
+  body,
+  #root {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
   body {
     font-family: 'Work Sans', sans-serif;
     color: var(--color-charcoal);

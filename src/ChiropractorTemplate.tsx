@@ -682,7 +682,7 @@ export function ChiropractorTemplate() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="flex flex-col sm:flex-row items-center gap-4 mb-8"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8 w-full max-w-[340px] sm:max-w-none sm:w-auto"
           >
             <a
               href={templateData.hero.ctaPrimary.href}
@@ -712,14 +712,14 @@ export function ChiropractorTemplate() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.75 }}
-            className="flex items-center justify-start gap-4 md:gap-5"
+            className="grid grid-cols-3 gap-2.5 w-full md:w-auto md:flex md:items-center md:justify-start md:gap-5"
           >
             {templateData.hero.stats.map((stat, i) => {
               const isNumeric = /^[0-9]/.test(stat.value);
               return (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center text-center px-4 py-3.5 md:px-6 md:py-4 rounded-[14px] min-w-[124px] md:min-w-[156px] min-h-[68px] md:min-h-[78px]"
+                className="flex flex-col items-center justify-center text-center px-2 py-3.5 md:px-6 md:py-4 rounded-[14px] min-w-0 md:min-w-[156px] min-h-[68px] md:min-h-[78px]"
                 style={{
                   background: 'rgba(255,255,255,0.04)',
                   backdropFilter: 'blur(12px)',
@@ -727,8 +727,8 @@ export function ChiropractorTemplate() {
                   border: '1px solid rgba(255,255,255,0.08)',
                 }}
               >
-                <p className={`${isNumeric ? 'font-cormorant text-[22px] md:text-[27px]' : 'font-cormorant text-[16px] md:text-[18px] tracking-[0.02em]'} text-[#FFFFFF] leading-none mb-1.5 whitespace-nowrap`}>{stat.value}</p>
-                <p className="font-inter text-[10px] text-[#B3B3B3] tracking-[0.06em] whitespace-nowrap">{stat.label}</p>
+                <p className={`${isNumeric ? 'font-cormorant text-[24px] md:text-[27px]' : 'font-cormorant text-[16px] md:text-[18px] tracking-[0.02em]'} text-[#FFFFFF] leading-none mb-1.5 whitespace-nowrap`}>{stat.value}</p>
+                <p className="font-inter text-[10px] text-[#B3B3B3] tracking-[0.06em] whitespace-normal md:whitespace-nowrap">{stat.label}</p>
               </div>
               );
             })}
@@ -754,18 +754,18 @@ export function ChiropractorTemplate() {
       </section>
 
       {/* Welcome / brand intro */}
-      <section className="bg-[#F5F4F0] px-6 md:px-10 py-[110px] md:py-[130px]">
+      <section className="bg-[#F5F4F0] px-6 md:px-10 py-[88px] md:py-[130px]">
         <div className="max-w-[1160px] mx-auto px-0 md:px-[56px] grid grid-cols-1 md:grid-cols-[44%_40%] gap-10 md:gap-0 md:justify-between items-start">
           <ScrollReveal>
             <div>
               <p className="font-inter text-[11px] font-semibold uppercase tracking-[0.2em] text-[#565656]/70 mb-7">Tervetuloa Bandage Hyvinvointiin</p>
               <h2 className="font-cormorant font-bold text-[30px] md:text-[39px] text-[#181818] leading-[1.18] max-w-[460px]">Hetki palautumiselle, paremmalle ololle ja omalle hyvinvoinnille.</h2>
-              <div className="mt-12 flex items-center gap-4">
-                <div className="inline-flex shrink-0 items-center bg-[#FFFFFF] border border-[#181818]/[0.08] rounded-md px-4 py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-                  <img src={templateData.navigation.logo} alt="Bandage Hyvinvointi" className="block h-6 w-auto" />
+              <div className="mt-10 md:mt-12 flex items-center gap-2.5 md:gap-4">
+                <div className="inline-flex shrink-0 items-center bg-[#FFFFFF] border border-[#181818]/[0.08] rounded-md px-3 py-2 md:px-4 md:py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+                  <img src={templateData.navigation.logo} alt="Bandage Hyvinvointi" className="block h-5 md:h-6 w-auto" />
                 </div>
                 <div
-                  className="inline-flex items-center gap-3 rounded-md px-5 py-3"
+                  className="inline-flex items-center gap-2 md:gap-3 rounded-md px-3.5 py-2.5 md:px-5 md:py-3 min-w-0"
                   style={{
                     background: 'rgba(24,24,24,0.88)',
                     border: '1px solid rgba(255,255,255,0.14)',
@@ -774,20 +774,20 @@ export function ChiropractorTemplate() {
                     boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 4px 14px rgba(0,0,0,0.10)',
                   }}
                 >
-                  <span className="flex items-center gap-[3px] text-[#F0F0EA]">
+                  <span className="flex shrink-0 items-center gap-[3px] text-[#F0F0EA]">
                     {[0, 1, 2, 3, 4].map((s) => (
                       <Star key={s} size={12} strokeWidth={0} fill="currentColor" />
                     ))}
                   </span>
-                  <span className="font-inter text-[13px] font-semibold text-[#FFFFFF] whitespace-nowrap">62 Timma-arvostelua</span>
+                  <span className="font-inter text-[12px] md:text-[13px] font-semibold text-[#FFFFFF] whitespace-nowrap">62 Timma-arvostelua</span>
                 </div>
               </div>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
             <div className="md:pt-36 max-w-[380px]">
-              <div className="w-10 border-t border-[#181818]/[0.18] mb-7" />
-              <p className="font-inter text-[15px] md:text-[16.5px] text-[#565656] leading-[1.8]">Bandage Hyvinvoinnissa jokainen hoito lähtee sinun tarpeistasi. Olipa tavoitteesi rentoutua, palautua rasituksesta tai helpottaa kehon kireyksiä, saat rauhallisen hetken ja yksilöllisesti toteutetun hoidon Turun keskustassa.</p>
+              <div className="w-10 border-t border-[#181818]/[0.18] mb-6 md:mb-7" />
+              <p className="font-inter text-[16px] md:text-[16.5px] text-[#565656] leading-[1.75] md:leading-[1.8]">Bandage Hyvinvoinnissa jokainen hoito lähtee sinun tarpeistasi. Olipa tavoitteesi rentoutua, palautua rasituksesta tai helpottaa kehon kireyksiä, saat rauhallisen hetken ja yksilöllisesti toteutetun hoidon Turun keskustassa.</p>
             </div>
           </ScrollReveal>
         </div>
